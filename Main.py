@@ -6,7 +6,7 @@ def vu(user_list):
     if answer == 'All':
         print('Выводим список всех сотрудников')
         for i in user_list:
-            print(f"Имя: {i[0]}, группа: {i[1]}, активность: {i[3]}, ограничения пароля{i[4]},")
+            print(f"Имя: {i[0]}, группа: {i[1]}, активность: {i[3]}, ограничения пароля: {i[4]},")
     else:
         for i in user_list:
             if i[0] == answer:
@@ -86,14 +86,6 @@ def main():
             if command_status == 0 and command != 'q':
                 print('Команда не распознана или у вас недостаточно привилегий')
             
-            
-            
-            
-            
-            
-            
-
-        
 
 
 if __name__ == '__main__':
