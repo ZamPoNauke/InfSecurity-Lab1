@@ -1,4 +1,5 @@
 import getpass
+
 from cryptography.fernet import Fernet
 
 
@@ -25,11 +26,11 @@ def strong_password(password): # если 8 символов, >3 букв и >3 
     letters = 0
     password_status = 0
     while password_status == 0:
-        if len(password)>=8:
+        if len(password) >= 8:
             for i in password:
                 if i.isdigit(): numbers += 1
                 else: letters += 1
-            if numbers>2 and letters>2:
+            if numbers > 2 and letters > 2:
                 return password
             else:
                 print ('Пароль не подходит по символам. Попробуй еще раз')
@@ -195,7 +196,7 @@ def main():
                             f.write(str(word) + ' ')
                         f.write('\n')
                 f.close()
-            if user_status=='admin': # Команды только для админа
+            if user_status == 'admin': # Команды только для админа
                 if command == 'vu':
                     vu()
                     command_status = 1
