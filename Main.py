@@ -51,10 +51,10 @@ def cp(user):
             while password_conformity != 1:
                 if debug >= 1: print(user)
                 if user[4] == '1':
-                    new_password1 = strong_password(getpass.getpass('Создадим сложный пароль: '))
+                    new_password1 = strong_password(getpass.getpass('Создадим новый сложный пароль: '))
                     new_password2 = strong_password(getpass.getpass('Введи второй раз для проверки: '))
                 else:
-                    new_password1 = getpass.getpass('Вводи любой пароль: ')
+                    new_password1 = getpass.getpass('Вводи любой новый пароль: ')
                     new_password2 = getpass.getpass('Введи второй раз для проверки: ')
                 if new_password1 == new_password2:
                     print('Password changed!')
