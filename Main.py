@@ -33,7 +33,7 @@ def strong_password(password): # если 8 символов, >3 букв и >3 
             if numbers > 2 and letters > 2:
                 return password
             else:
-                print ('Пароль не подходит по символам. Попробуй еще раз')
+                print('Пароль не подходит по символам. Попробуй еще раз')
                 password = getpass.getpass('Password: ')
         else: password = getpass.getpass('Увеличь длину пароля: ')
 
