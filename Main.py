@@ -1,4 +1,5 @@
 import getpass
+
 from cryptography.fernet import Fernet
 
 
@@ -25,7 +26,7 @@ def strong_password(password): # если 8 символов, >3 букв и >3 
     letters = 0
     password_status = 0
     while password_status == 0:
-        if len(password)>=8:
+        if len(password) >= 8:
             for i in password:
                 if i.isdigit(): numbers += 1
                 else: letters += 1
@@ -50,10 +51,10 @@ def cp(user):
             while password_conformity != 1:
                 if debug >= 1: print(user)
                 if user[4] == '1':
-                    new_password1 = strong_password(getpass.getpass('Создадим сложный пароль: '))
+                    new_password1 = strong_password(getpass.getpass('Создадим новый сложный пароль: '))
                     new_password2 = strong_password(getpass.getpass('Введи второй раз для проверки: '))
                 else:
-                    new_password1 = getpass.getpass('Вводи любой пароль: ')
+                    new_password1 = getpass.getpass('Вводи любой новый пароль: ')
                     new_password2 = getpass.getpass('Введи второй раз для проверки: ')
                 if new_password1 == new_password2:
                     print('Password changed!')
@@ -68,11 +69,11 @@ def vu():
     if answer == 'All':
         print('Выводим список всех сотрудников')
         for i in user_list:
-            print(f"Имя: {i[0]}, группа: {i[1]}, активность: {i[3]}, ограничения пароля: {i[4]},")
+            print(f"Имя: {i[0]}, группа: {i[1]}, активность: {i[3]}, ограничения пароля: {i[4]}")
     else:
         for i in user_list:
             if i[0] == answer:
-                print(f"Имя: {i[0]}, группа: {i[1]}, активность: {i[3]}, ограничения пароля{i[4]},")
+                print(f"Имя: {i[0]}, группа: {i[1]}, активность: {i[3]}, ограничения пароля{i[4]}")
 
 
 def cu():
@@ -195,7 +196,7 @@ def main():
                             f.write(str(word) + ' ')
                         f.write('\n')
                 f.close()
-            if user_status=='admin': # Команды только для админа
+            if user_status == 'admin': # Команды только для админа
                 if command == 'vu':
                     vu()
                     command_status = 1
